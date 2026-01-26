@@ -47,17 +47,7 @@ Features:
 
 ---
 
-### 3. Logical Inference for Service Rules & Advisory Consistency
-- Propositional logic model of MRT operational rules and LTA network changes.
-- Resolution-based inference engine to:
-  - Validate proposed routes
-  - Detect inconsistent service advisories
-  - Identify violated operational rules
-- Supports both current and future network constraints.
-
----
-
-### 4. Crowding Risk Prediction using Bayesian Networks
+### 3. Crowding Risk Prediction using Bayesian Networks
 Bayesian network variables include:
 
 - Weather
@@ -75,7 +65,7 @@ Capabilities:
 
 ---
 
-### 5. (Bonus) Passenger Re-Routing Optimization
+### (Bonus) Passenger Re-Routing Optimization
 Optional advanced component:
 
 - Disruption scenarios (segment suspensions, reduced service, increased transfer penalties)
