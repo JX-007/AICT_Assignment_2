@@ -1,0 +1,383 @@
+Line,Line_Name,Station,Destination,Travel_Time_Seconds
+NSL,North-South Line,Jurong East,Bukit Batok,120
+NSL,North-South Line,Bukit Batok,Jurong East,120
+NSL,North-South Line,Bukit Batok,Bukit Gombak,120
+NSL,North-South Line,Bukit Gombak,Bukit Batok,120
+NSL,North-South Line,Bukit Gombak,Choa Chu Kang,120
+NSL,North-South Line,Choa Chu Kang,Bukit Gombak,120
+NSL,North-South Line,Choa Chu Kang,Yew Tee,120
+NSL,North-South Line,Yew Tee,Choa Chu Kang,120
+NSL,North-South Line,Yew Tee,Kranji,120
+NSL,North-South Line,Kranji,Yew Tee,120
+NSL,North-South Line,Kranji,Marsiling,120
+NSL,North-South Line,Marsiling,Kranji,120
+NSL,North-South Line,Marsiling,Woodlands,120
+NSL,North-South Line,Woodlands,Marsiling,120
+NSL,North-South Line,Woodlands,Admiralty,120
+NSL,North-South Line,Admiralty,Woodlands,120
+NSL,North-South Line,Admiralty,Sembawang,120
+NSL,North-South Line,Sembawang,Admiralty,120
+NSL,North-South Line,Sembawang,Canberra,120
+NSL,North-South Line,Canberra,Sembawang,120
+NSL,North-South Line,Canberra,Yishun,120
+NSL,North-South Line,Yishun,Canberra,120
+NSL,North-South Line,Yishun,Khatib,120
+NSL,North-South Line,Khatib,Yishun,120
+NSL,North-South Line,Khatib,Yio Chu Kang,120
+NSL,North-South Line,Yio Chu Kang,Khatib,120
+NSL,North-South Line,Yio Chu Kang,Ang Mo Kio,120
+NSL,North-South Line,Ang Mo Kio,Yio Chu Kang,120
+NSL,North-South Line,Ang Mo Kio,Bishan,120
+NSL,North-South Line,Bishan,Ang Mo Kio,120
+NSL,North-South Line,Bishan,Braddell,120
+NSL,North-South Line,Braddell,Bishan,120
+NSL,North-South Line,Braddell,Toa Payoh,120
+NSL,North-South Line,Toa Payoh,Braddell,120
+NSL,North-South Line,Toa Payoh,Novena,120
+NSL,North-South Line,Novena,Toa Payoh,120
+NSL,North-South Line,Novena,Newton,120
+NSL,North-South Line,Newton,Novena,120
+NSL,North-South Line,Newton,Orchard,120
+NSL,North-South Line,Orchard,Newton,120
+NSL,North-South Line,Orchard,Somerset,120
+NSL,North-South Line,Somerset,Orchard,120
+NSL,North-South Line,Somerset,Dhoby Ghaut,120
+NSL,North-South Line,Dhoby Ghaut,Somerset,120
+NSL,North-South Line,Dhoby Ghaut,City Hall,120
+NSL,North-South Line,City Hall,Dhoby Ghaut,120
+NSL,North-South Line,City Hall,Raffles Place,120
+NSL,North-South Line,Raffles Place,City Hall,120
+NSL,North-South Line,Raffles Place,Marina Bay,120
+NSL,North-South Line,Marina Bay,Raffles Place,120
+NSL,North-South Line,Marina Bay,Marina South Pier,120
+NSL,North-South Line,Marina South Pier,Marina Bay,120
+EWL,East-West Line,Tuas Link,Tuas West Road,120
+EWL,East-West Line,Tuas West Road,Tuas Crescent,120
+EWL,East-West Line,Tuas West Road,Tuas Link,120
+EWL,East-West Line,Tuas Crescent,Gul Circle,120
+EWL,East-West Line,Tuas Crescent,Tuas West Road,120
+EWL,East-West Line,Gul Circle,Joo Koon,120
+EWL,East-West Line,Gul Circle,Tuas Crescent,120
+EWL,East-West Line,Joo Koon,Pioneer,120
+EWL,East-West Line,Joo Koon,Gul Circle,120
+EWL,East-West Line,Pioneer,Boon Lay,120
+EWL,East-West Line,Pioneer,Joo Koon,120
+EWL,East-West Line,Boon Lay,Lakeside,120
+EWL,East-West Line,Boon Lay,Pioneer,120
+EWL,East-West Line,Lakeside,Chinese Garden,120
+EWL,East-West Line,Lakeside,Boon Lay,120
+EWL,East-West Line,Chinese Garden,Jurong East,120
+EWL,East-West Line,Chinese Garden,Lakeside,120
+EWL,East-West Line,Clementi,Dover,120
+EWL,East-West Line,Clementi,Jurong East,120
+EWL,East-West Line,Dover,Buona Vista,120
+EWL,East-West Line,Dover,Clementi,120
+EWL,East-West Line,Buona Vista,Commonwealth,120
+EWL,East-West Line,Buona Vista,Dover,120
+EWL,East-West Line,Commonwealth,Queenstown,120
+EWL,East-West Line,Commonwealth,Buona Vista,120
+EWL,East-West Line,Queenstown,Redhill,120
+EWL,East-West Line,Queenstown,Commonwealth,120
+EWL,East-West Line,Redhill,Tiong Bahru,120
+EWL,East-West Line,Redhill,Queenstown,120
+EWL,East-West Line,Tiong Bahru,Outram Park,120
+EWL,East-West Line,Tiong Bahru,Redhill,120
+EWL,East-West Line,Outram Park,Tanjong Pagar,120
+EWL,East-West Line,Outram Park,Tiong Bahru,120
+EWL,East-West Line,Tanjong Pagar,Raffles Place,120
+EWL,East-West Line,Tanjong Pagar,Outram Park,120
+EWL,East-West Line,Bugis,Lavender,120
+EWL,East-West Line,Bugis,City Hall,120
+EWL,East-West Line,Lavender,Kallang,120
+EWL,East-West Line,Lavender,Bugis,120
+EWL,East-West Line,Kallang,Aljunied,120
+EWL,East-West Line,Kallang,Lavender,120
+EWL,East-West Line,Aljunied,Paya Lebar,120
+EWL,East-West Line,Aljunied,Kallang,120
+EWL,East-West Line,Paya Lebar,Eunos,120
+EWL,East-West Line,Paya Lebar,Aljunied,120
+EWL,East-West Line,Eunos,Kembangan,120
+EWL,East-West Line,Eunos,Paya Lebar,120
+EWL,East-West Line,Kembangan,Bedok,120
+EWL,East-West Line,Kembangan,Eunos,120
+EWL,East-West Line,Bedok,Tanah Merah,120
+EWL,East-West Line,Bedok,Kembangan,120
+EWL,East-West Line,Tanah Merah,Simei,120
+EWL,East-West Line,Tanah Merah,Bedok,120
+EWL,East-West Line,Tanah Merah,Expo,120
+EWL,East-West Line,Simei,Tampines,120
+EWL,East-West Line,Simei,Tanah Merah,120
+EWL,East-West Line,Tampines,Pasir Ris,120
+EWL,East-West Line,Tampines,Simei,120
+EWL,East-West Line,Pasir Ris,Tampines,120
+EWL,East-West Line,Expo,Tanah Merah,120
+EWL,East-West Line,Expo,Changi Airport,120
+EWL,East-West Line,Changi Airport,Expo,120
+NEL,North-East Line,HarbourFront,Outram Park,120
+NEL,North-East Line,Chinatown,Outram Park,120
+NEL,North-East Line,Chinatown,Clarke Quay,120
+NEL,North-East Line,Clarke Quay,Chinatown,120
+NEL,North-East Line,Clarke Quay,Dhoby Ghaut,120
+NEL,North-East Line,Little India,Dhoby Ghaut,120
+NEL,North-East Line,Little India,Farrer Park,120
+NEL,North-East Line,Farrer Park,Little India,120
+NEL,North-East Line,Farrer Park,Boon Keng,120
+NEL,North-East Line,Boon Keng,Farrer Park,120
+NEL,North-East Line,Boon Keng,Potong Pasir,120
+NEL,North-East Line,Potong Pasir,Boon Keng,120
+NEL,North-East Line,Potong Pasir,Woodleigh,120
+NEL,North-East Line,Woodleigh,Potong Pasir,120
+NEL,North-East Line,Woodleigh,Serangoon,120
+NEL,North-East Line,Serangoon,Woodleigh,120
+NEL,North-East Line,Serangoon,Kovan,120
+NEL,North-East Line,Kovan,Serangoon,120
+NEL,North-East Line,Kovan,Hougang,120
+NEL,North-East Line,Hougang,Kovan,120
+NEL,North-East Line,Hougang,Buangkok,120
+NEL,North-East Line,Buangkok,Hougang,120
+NEL,North-East Line,Buangkok,Sengkang,120
+NEL,North-East Line,Sengkang,Buangkok,120
+NEL,North-East Line,Sengkang,Punggol,120
+NEL,North-East Line,Punggol,Sengkang,120
+NEL,North-East Line,Punggol,Punggol Coast,120
+NEL,North-East Line,Punggol Coast,Punggol,120
+CCL,Circle Line,HarbourFront,Telok Blangah,120
+CCL,Circle Line,HarbourFront,Bayfront,120
+CCL,Circle Line,Telok Blangah,Labrador Park,120
+CCL,Circle Line,Telok Blangah,HarbourFront,120
+CCL,Circle Line,Labrador Park,Pasir Panjang,120
+CCL,Circle Line,Labrador Park,Telok Blangah,120
+CCL,Circle Line,Pasir Panjang,Haw Par Villa,120
+CCL,Circle Line,Pasir Panjang,Labrador Park,120
+CCL,Circle Line,Haw Par Villa,Kent Ridge,120
+CCL,Circle Line,Haw Par Villa,Pasir Panjang,120
+CCL,Circle Line,Kent Ridge,one-north,120
+CCL,Circle Line,Kent Ridge,Haw Par Villa,120
+CCL,Circle Line,one-north,Buona Vista,120
+CCL,Circle Line,one-north,Kent Ridge,120
+CCL,Circle Line,Buona Vista,Holland Village,120
+CCL,Circle Line,Buona Vista,one-north,120
+CCL,Circle Line,Holland Village,Farrer Road,120
+CCL,Circle Line,Holland Village,Buona Vista,120
+CCL,Circle Line,Farrer Road,Botanic Gardens,120
+CCL,Circle Line,Farrer Road,Holland Village,120
+CCL,Circle Line,Botanic Gardens,Caldecott,120
+CCL,Circle Line,Botanic Gardens,Farrer Road,120
+CCL,Circle Line,Caldecott,Marymount,120
+CCL,Circle Line,Caldecott,Botanic Gardens,120
+CCL,Circle Line,Marymount,Bishan,120
+CCL,Circle Line,Marymount,Caldecott,120
+CCL,Circle Line,Bishan,Lorong Chuan,120
+CCL,Circle Line,Bishan,Marymount,120
+CCL,Circle Line,Lorong Chuan,Serangoon,120
+CCL,Circle Line,Lorong Chuan,Bishan,120
+CCL,Circle Line,Serangoon,Bartley,120
+CCL,Circle Line,Serangoon,Lorong Chuan,120
+CCL,Circle Line,Bartley,Tai Seng,120
+CCL,Circle Line,Bartley,Serangoon,120
+CCL,Circle Line,Tai Seng,MacPherson,120
+CCL,Circle Line,Tai Seng,Bartley,120
+CCL,Circle Line,MacPherson,Paya Lebar,120
+CCL,Circle Line,MacPherson,Tai Seng,120
+CCL,Circle Line,Paya Lebar,Dakota,120
+CCL,Circle Line,Paya Lebar,MacPherson,120
+CCL,Circle Line,Dakota,Mountbatten,120
+CCL,Circle Line,Dakota,Paya Lebar,120
+CCL,Circle Line,Mountbatten,Stadium,120
+CCL,Circle Line,Mountbatten,Dakota,120
+CCL,Circle Line,Stadium,Nicoll Highway,120
+CCL,Circle Line,Stadium,Mountbatten,120
+CCL,Circle Line,Nicoll Highway,Promenade,120
+CCL,Circle Line,Nicoll Highway,Stadium,120
+CCL,Circle Line,Promenade,Esplanade,120
+CCL,Circle Line,Promenade,Nicoll Highway,120
+CCL,Circle Line,Bayfront,HarbourFront,120
+CCL,Circle Line,Bayfront,Marina Bay,120
+CCL,Circle Line,Marina Bay,Bayfront,120
+CCL,Circle Line,Esplanade,Bras Basah,120
+CCL,Circle Line,Esplanade,Promenade,120
+CCL,Circle Line,Bras Basah,Dhoby Ghaut,120
+CCL,Circle Line,Bras Basah,Esplanade,120
+CCL,Circle Line,Dhoby Ghaut,Bras Basah,120
+DTL,Downtown Line,Bukit Panjang,Cashew,120
+DTL,Downtown Line,Cashew,Bukit Panjang,120
+DTL,Downtown Line,Cashew,Hillview,120
+DTL,Downtown Line,Hillview,Cashew,120
+DTL,Downtown Line,Hillview,Hume,120
+DTL,Downtown Line,Hume,Hillview,120
+DTL,Downtown Line,Hume,Beauty World,120
+DTL,Downtown Line,Beauty World,Hume,120
+DTL,Downtown Line,Beauty World,King Albert Park,120
+DTL,Downtown Line,King Albert Park,Beauty World,120
+DTL,Downtown Line,King Albert Park,Sixth Avenue,120
+DTL,Downtown Line,Sixth Avenue,King Albert Park,120
+DTL,Downtown Line,Sixth Avenue,Tan Kah Kee,120
+DTL,Downtown Line,Tan Kah Kee,Sixth Avenue,120
+DTL,Downtown Line,Tan Kah Kee,Botanic Gardens,120
+DTL,Downtown Line,Stevens,Botanic Gardens,120
+DTL,Downtown Line,Stevens,Newton,120
+DTL,Downtown Line,Rochor,Little India,120
+DTL,Downtown Line,Rochor,Bugis,120
+DTL,Downtown Line,Downtown,Bayfront,120
+DTL,Downtown Line,Downtown,Telok Ayer,120
+DTL,Downtown Line,Telok Ayer,Downtown,120
+DTL,Downtown Line,Telok Ayer,Chinatown,120
+DTL,Downtown Line,Fort Canning,Chinatown,120
+DTL,Downtown Line,Fort Canning,Bencoolen,120
+DTL,Downtown Line,Bencoolen,Fort Canning,120
+DTL,Downtown Line,Bencoolen,Jalan Besar,120
+DTL,Downtown Line,Jalan Besar,Bencoolen,120
+DTL,Downtown Line,Jalan Besar,Bendemeer,120
+DTL,Downtown Line,Bendemeer,Jalan Besar,120
+DTL,Downtown Line,Bendemeer,Geylang Bahru,120
+DTL,Downtown Line,Geylang Bahru,Bendemeer,120
+DTL,Downtown Line,Geylang Bahru,Mattar,120
+DTL,Downtown Line,Mattar,Geylang Bahru,120
+DTL,Downtown Line,Mattar,MacPherson,120
+DTL,Downtown Line,Ubi,MacPherson,120
+DTL,Downtown Line,Ubi,Kaki Bukit,120
+DTL,Downtown Line,Kaki Bukit,Ubi,120
+DTL,Downtown Line,Kaki Bukit,Bedok North,120
+DTL,Downtown Line,Bedok North,Kaki Bukit,120
+DTL,Downtown Line,Bedok North,Bedok Reservoir,120
+DTL,Downtown Line,Bedok Reservoir,Bedok North,120
+DTL,Downtown Line,Bedok Reservoir,Tampines West,120
+DTL,Downtown Line,Tampines West,Bedok Reservoir,120
+DTL,Downtown Line,Tampines West,Tampines,120
+DTL,Downtown Line,Tampines East,Tampines,120
+DTL,Downtown Line,Tampines East,Upper Changi,120
+DTL,Downtown Line,Upper Changi,Tampines East,120
+DTL,Downtown Line,Upper Changi,Expo,120
+TEL,Thomson-East Coast Line,Woodlands North,Woodlands,120
+TEL,Thomson-East Coast Line,Woodlands South,Woodlands,120
+TEL,Thomson-East Coast Line,Woodlands South,Springleaf,120
+TEL,Thomson-East Coast Line,Springleaf,Woodlands South,120
+TEL,Thomson-East Coast Line,Springleaf,Lentor,120
+TEL,Thomson-East Coast Line,Lentor,Springleaf,120
+TEL,Thomson-East Coast Line,Lentor,Mayflower,120
+TEL,Thomson-East Coast Line,Mayflower,Lentor,120
+TEL,Thomson-East Coast Line,Mayflower,Bright Hill,120
+TEL,Thomson-East Coast Line,Bright Hill,Mayflower,120
+TEL,Thomson-East Coast Line,Bright Hill,Upper Thomson,120
+TEL,Thomson-East Coast Line,Upper Thomson,Bright Hill,120
+TEL,Thomson-East Coast Line,Upper Thomson,Caldecott,120
+TEL,Thomson-East Coast Line,Mount Pleasant,Caldecott,120
+TEL,Thomson-East Coast Line,Mount Pleasant,Stevens,120
+TEL,Thomson-East Coast Line,Napier,Stevens,120
+TEL,Thomson-East Coast Line,Napier,Orchard Boulevard,120
+TEL,Thomson-East Coast Line,Orchard Boulevard,Napier,120
+TEL,Thomson-East Coast Line,Orchard Boulevard,Orchard,120
+TEL,Thomson-East Coast Line,Great World,Orchard,120
+TEL,Thomson-East Coast Line,Great World,Havelock,120
+TEL,Thomson-East Coast Line,Havelock,Great World,120
+TEL,Thomson-East Coast Line,Havelock,Outram Park,120
+TEL,Thomson-East Coast Line,Maxwell,Outram Park,120
+TEL,Thomson-East Coast Line,Maxwell,Shenton Way,120
+TEL,Thomson-East Coast Line,Shenton Way,Maxwell,120
+TEL,Thomson-East Coast Line,Shenton Way,Marina Bay,120
+TEL,Thomson-East Coast Line,Marina South,Marina Bay,120
+TEL,Thomson-East Coast Line,Marina South,Gardens by the Bay,120
+TEL,Thomson-East Coast Line,Gardens by the Bay,Marina South,120
+TEL,Thomson-East Coast Line,Gardens by the Bay,Tanjong Rhu,120
+TEL,Thomson-East Coast Line,Tanjong Rhu,Gardens by the Bay,120
+TEL,Thomson-East Coast Line,Tanjong Rhu,Katong Park,120
+TEL,Thomson-East Coast Line,Katong Park,Tanjong Rhu,120
+TEL,Thomson-East Coast Line,Katong Park,Tanjong Katong,120
+TEL,Thomson-East Coast Line,Tanjong Katong,Katong Park,120
+TEL,Thomson-East Coast Line,Tanjong Katong,Marine Parade,120
+TEL,Thomson-East Coast Line,Marine Parade,Tanjong Katong,120
+TEL,Thomson-East Coast Line,Marine Parade,Marine Terrace,120
+TEL,Thomson-East Coast Line,Marine Terrace,Marine Parade,120
+TEL,Thomson-East Coast Line,Marine Terrace,Siglap,120
+TEL,Thomson-East Coast Line,Siglap,Marine Terrace,120
+TEL,Thomson-East Coast Line,Siglap,Bayshore,120
+TEL,Thomson-East Coast Line,Bayshore,Siglap,120
+BPL,Bukit Panjang LRT,Choa Chu Kang,South View,120
+BPL,Bukit Panjang LRT,South View,Choa Chu Kang,120
+BPL,Bukit Panjang LRT,South View,Keat Hong,120
+BPL,Bukit Panjang LRT,Keat Hong,South View,120
+BPL,Bukit Panjang LRT,Keat Hong,Teck Whye,120
+BPL,Bukit Panjang LRT,Teck Whye,Keat Hong,120
+BPL,Bukit Panjang LRT,Teck Whye,Phoenix,120
+BPL,Bukit Panjang LRT,Phoenix,Teck Whye,120
+BPL,Bukit Panjang LRT,Phoenix,Bukit Panjang,120
+BPL,Bukit Panjang LRT,Bukit Panjang,Phoenix,120
+BPL,Bukit Panjang LRT,Bukit Panjang,Petir,120
+BPL,Bukit Panjang LRT,Petir,Bukit Panjang,120
+BPL,Bukit Panjang LRT,Petir,Pending,120
+BPL,Bukit Panjang LRT,Pending,Petir,120
+BPL,Bukit Panjang LRT,Pending,Bangkit,120
+BPL,Bukit Panjang LRT,Bangkit,Pending,120
+BPL,Bukit Panjang LRT,Bangkit,Fajar,120
+BPL,Bukit Panjang LRT,Fajar,Bangkit,120
+BPL,Bukit Panjang LRT,Fajar,Segar,120
+BPL,Bukit Panjang LRT,Segar,Fajar,120
+BPL,Bukit Panjang LRT,Segar,Jelapang,120
+BPL,Bukit Panjang LRT,Jelapang,Segar,120
+BPL,Bukit Panjang LRT,Jelapang,Senja,120
+BPL,Bukit Panjang LRT,Senja,Jelapang,120
+BPL,Bukit Panjang LRT,Senja,Ten Mile Junction,120
+BPL,Bukit Panjang LRT,Ten Mile Junction,Senja,120
+BPL,Bukit Panjang LRT,Ten Mile Junction,Choa Chu Kang,120
+SKL,Sengkang LRT,Sengkang,Compassvale,120
+SKL,Sengkang LRT,Sengkang,Ranggung,120
+SKL,Sengkang LRT,Sengkang,Cheng Lim,120
+SKL,Sengkang LRT,Sengkang,Renjong,120
+SKL,Sengkang LRT,Compassvale,Sengkang,120
+SKL,Sengkang LRT,Compassvale,Rumbia,120
+SKL,Sengkang LRT,Rumbia,Compassvale,120
+SKL,Sengkang LRT,Rumbia,Bakau,120
+SKL,Sengkang LRT,Bakau,Rumbia,120
+SKL,Sengkang LRT,Bakau,Kangkar,120
+SKL,Sengkang LRT,Kangkar,Bakau,120
+SKL,Sengkang LRT,Kangkar,Ranggung,120
+SKL,Sengkang LRT,Ranggung,Kangkar,120
+SKL,Sengkang LRT,Ranggung,Sengkang,120
+SKL,Sengkang LRT,Cheng Lim,Sengkang,120
+SKL,Sengkang LRT,Cheng Lim,Farmway,120
+SKL,Sengkang LRT,Farmway,Cheng Lim,120
+SKL,Sengkang LRT,Farmway,Kupang,120
+SKL,Sengkang LRT,Kupang,Farmway,120
+SKL,Sengkang LRT,Kupang,Thanggam,120
+SKL,Sengkang LRT,Thanggam,Kupang,120
+SKL,Sengkang LRT,Thanggam,Fernvale,120
+SKL,Sengkang LRT,Fernvale,Thanggam,120
+SKL,Sengkang LRT,Fernvale,Layar,120
+SKL,Sengkang LRT,Layar,Fernvale,120
+SKL,Sengkang LRT,Layar,Tongkang,120
+SKL,Sengkang LRT,Tongkang,Layar,120
+SKL,Sengkang LRT,Tongkang,Renjong,120
+SKL,Sengkang LRT,Renjong,Tongkang,120
+SKL,Sengkang LRT,Renjong,Sengkang,120
+PGL,Punggol LRT,Punggol,Cove,120
+PGL,Punggol LRT,Punggol,Damai,120
+PGL,Punggol LRT,Punggol,Sam Kee,120
+PGL,Punggol LRT,Punggol,Soo Teck,120
+PGL,Punggol LRT,Cove,Punggol,120
+PGL,Punggol LRT,Cove,Meridian,120
+PGL,Punggol LRT,Meridian,Cove,120
+PGL,Punggol LRT,Meridian,Coral Edge,120
+PGL,Punggol LRT,Coral Edge,Meridian,120
+PGL,Punggol LRT,Coral Edge,Riviera,120
+PGL,Punggol LRT,Riviera,Coral Edge,120
+PGL,Punggol LRT,Riviera,Kadaloor,120
+PGL,Punggol LRT,Kadaloor,Riviera,120
+PGL,Punggol LRT,Kadaloor,Oasis,120
+PGL,Punggol LRT,Oasis,Kadaloor,120
+PGL,Punggol LRT,Oasis,Damai,120
+PGL,Punggol LRT,Damai,Oasis,120
+PGL,Punggol LRT,Damai,Punggol,120
+PGL,Punggol LRT,Sam Kee,Punggol,120
+PGL,Punggol LRT,Sam Kee,Teck Lee,120
+PGL,Punggol LRT,Teck Lee,Sam Kee,120
+PGL,Punggol LRT,Teck Lee,Punggol Point,120
+PGL,Punggol LRT,Punggol Point,Teck Lee,120
+PGL,Punggol LRT,Punggol Point,Samudera,120
+PGL,Punggol LRT,Samudera,Punggol Point,120
+PGL,Punggol LRT,Samudera,Nibong,120
+PGL,Punggol LRT,Nibong,Samudera,120
+PGL,Punggol LRT,Nibong,Sumang,120
+PGL,Punggol LRT,Sumang,Nibong,120
+PGL,Punggol LRT,Sumang,Soo Teck,120
+PGL,Punggol LRT,Soo Teck,Sumang,120
+PGL,Punggol LRT,Soo Teck,Punggol,120

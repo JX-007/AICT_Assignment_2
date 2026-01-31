@@ -1,0 +1,55 @@
+Line,Line_Name,Station,Destination,Travel_Time_Seconds,Status,Opening_Year
+CRL1,Cross Island Line Phase 1,Changi,Loyang,120,Under Construction,2030
+CRL1,Cross Island Line Phase 1,Loyang,Tampines East,120,Under Construction,2030
+CRL1,Cross Island Line Phase 1,Tampines East,Pasir Ris,120,Under Construction,2030
+CRL1,Cross Island Line Phase 1,Pasir Ris,Defu,120,Under Construction,2030
+CRL1,Cross Island Line Phase 1,Defu,Hougang,120,Under Construction,2030
+CRL1,Cross Island Line Phase 1,Hougang,Serangoon North,120,Under Construction,2030
+CRL1,Cross Island Line Phase 1,Serangoon North,Ang Mo Kio,120,Under Construction,2030
+CRL1,Cross Island Line Phase 1,Ang Mo Kio,Caldecott,120,Under Construction,2030
+CRL1,Cross Island Line Phase 1,Caldecott,Bright Hill,120,Under Construction,2030
+CRL1,Cross Island Line Phase 1,Bright Hill,Changi,120,Under Construction,2030
+CRL1,Cross Island Line Phase 1,Loyang,Changi,120,Under Construction,2030
+CRL1,Cross Island Line Phase 1,Tampines East,Loyang,120,Under Construction,2030
+CRL1,Cross Island Line Phase 1,Pasir Ris,Tampines East,120,Under Construction,2030
+CRL1,Cross Island Line Phase 1,Defu,Pasir Ris,120,Under Construction,2030
+CRL1,Cross Island Line Phase 1,Hougang,Defu,120,Under Construction,2030
+CRL1,Cross Island Line Phase 1,Serangoon North,Hougang,120,Under Construction,2030
+CRL1,Cross Island Line Phase 1,Ang Mo Kio,Serangoon North,120,Under Construction,2030
+CRL1,Cross Island Line Phase 1,Caldecott,Ang Mo Kio,120,Under Construction,2030
+CRL1,Cross Island Line Phase 1,Bright Hill,Caldecott,120,Under Construction,2030
+CRL2,Cross Island Line Phase 2,Jurong Lake District,Gul Circle,120,Planning Stage,2032
+CRL2,Cross Island Line Phase 2,Gul Circle,Loyang,120,Planning Stage,2032
+CRL2,Cross Island Line Phase 2,Loyang,Changi,120,Planning Stage,2032
+CRL2,Cross Island Line Phase 2,Changi,Jurong Lake District,120,Planning Stage,2032
+CRL2,Cross Island Line Phase 2,Gul Circle,Jurong Lake District,120,Planning Stage,2032
+CRL2,Cross Island Line Phase 2,Loyang,Gul Circle,120,Planning Stage,2032
+CRLPE,Cross Island Line Punggol Extension,Pasir Ris,Tampines,120,Under Construction,2032
+CRLPE,Cross Island Line Punggol Extension,Tampines,Sengkang,120,Under Construction,2032
+CRLPE,Cross Island Line Punggol Extension,Sengkang,Punggol,120,Under Construction,2032
+CRLPE,Cross Island Line Punggol Extension,Punggol,Pasir Ris,120,Under Construction,2032
+CRLPE,Cross Island Line Punggol Extension,Tampines,Pasir Ris,120,Under Construction,2032
+CRLPE,Cross Island Line Punggol Extension,Sengkang,Tampines,120,Under Construction,2032
+CRLPE,Cross Island Line Punggol Extension,Punggol,Sengkang,120,Under Construction,2032
+JRL,Jurong Region Line,Pioneer,Boon Lay,120,Planning Stage,2035
+JRL,Jurong Region Line,Boon Lay,Lakeside,120,Planning Stage,2035
+JRL,Jurong Region Line,Lakeside,Nanyang,120,Planning Stage,2035
+JRL,Jurong Region Line,Nanyang,Jurong Gateway,120,Planning Stage,2035
+JRL,Jurong Region Line,Jurong Gateway,Jurong Lake District,120,Planning Stage,2035
+JRL,Jurong Region Line,Jurong Lake District,Pioneer,120,Planning Stage,2035
+JRL,Jurong Region Line,Boon Lay,Pioneer,120,Planning Stage,2035
+JRL,Jurong Region Line,Lakeside,Boon Lay,120,Planning Stage,2035
+JRL,Jurong Region Line,Nanyang,Lakeside,120,Planning Stage,2035
+JRL,Jurong Region Line,Jurong Gateway,Nanyang,120,Planning Stage,2035
+JRL,Jurong Region Line,Jurong Lake District,Jurong Gateway,120,Planning Stage,2035
+JRL,Jurong Region Line,Pioneer,Jurong Lake District,120,Planning Stage,2035
+CC6,Circle Line 6,Cantonment,Pearl Bank,120,Planning Stage,2033
+CC6,Circle Line 6,Pearl Bank,Tiong Bahru,120,Planning Stage,2033
+CC6,Circle Line 6,Tiong Bahru,Cantonment,120,Planning Stage,2033
+CC6,Circle Line 6,Pearl Bank,Cantonment,120,Planning Stage,2033
+DTL2,Downtown Line Extension 2,Bukit Panjang,Cashew,120,Planning Stage,2034
+DTL2,Downtown Line Extension 2,Cashew,Hillview,120,Planning Stage,2034
+DTL2,Downtown Line Extension 2,Hillview,Bukit Panjang,120,Planning Stage,2034
+DTL3,Downtown Line Extension 3,Upper Changi,Expo,120,Planning Stage,2034
+DTL3,Downtown Line Extension 3,Expo,Upper Changi,120,Planning Stage,2034
+NEL_Ext,North East Line Extension,Punggol Coast,Future,120,Planning Stage,2035
