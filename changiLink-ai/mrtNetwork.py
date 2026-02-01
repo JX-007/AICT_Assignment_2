@@ -33,38 +33,43 @@ def load_mrt_connections(csv_path=None):
 
 	return mrt_network_data
 
-CurrentStations = load_mrt_connections()
+def build_mrt_network(mrt_network_data):
+    """
+    Builds the MRT network graph with Station objects.
+    Expects raw network data (station -> [(destination, lines)]).
+    """
 
-def build_mrt_network():
-	"""
-	Builds the MRT network graph with Station objects.
-	Returns a dictionary where keys are station names and values are Station objects
-	with connections to other stations.
-	
-	All travel times are in seconds. Baseline station-to-station travel time with penalties as applicable.
-	"""
-	
-	# Consolidated MRT Network Data with stations and their connections
-	mrt_network_data = CurrentStations
-	
-	# Create all Station objects and build connections in a single pass
-	mrt_network = {}
-	
-	# First pass: Create all Station objects with their lines
-	for station_name in mrt_network_data.keys():
-		# Extract lines from connections by looking at the network
-		lines_set = set()
-		for dest_name, line_list in mrt_network_data[station_name]:
-			lines_set.update(line_list)
-		
-		mrt_network[station_name] = Station(station_name, list(lines_set))
-	
-	# Second pass: Add connections between Station objects
-	for source_name, connections_list in mrt_network_data.items():
-		source_station = mrt_network[source_name]
-		for dest_name, lines in connections_list:
-			if dest_name in mrt_network:
-				dest_station = mrt_network[dest_name]
-				source_station.add_connection(dest_station, lines)
-	
-	return mrt_network
+    mrt_network = {}
+
+    # First pass: create Station objects
+    for station_name in mrt_network_data.keys():
+        lines_set = set()
+        for dest_name, line_list in mrt_network_data[station_name]:
+            lines_set.update(line_list)
+
+        mrt_network[station_name] = Station(station_name, list(lines_set))
+
+    # Second pass: add connections
+    for source_name, connections_list in mrt_network_data.items():
+        source_station = mrt_network[source_name]
+        for dest_name, lines in connections_list:
+            if dest_name in mrt_network:
+                dest_station = mrt_network[dest_name]
+                source_station.add_connection(dest_station, lines)
+
+    return mrt_network
+
+
+def load_future_mrt_connections(future_csv, base_network_data):
+    """
+    Merge future MRT stations into existing MRT network data.
+    """
+    future_data = load_mrt_connections(future_csv)
+
+    for station, connections in future_data.items():
+        if station not in base_network_data:
+            base_network_data[station] = connections
+        else:
+            base_network_data[station].extend(connections)
+
+    return base_network_data

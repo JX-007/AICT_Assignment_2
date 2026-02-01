@@ -68,3 +68,10 @@ def checkSymmetry(mrt_stations):
 	
 	return asymmetric_edges
 
+def get_lines_to(self, other_station):
+    for dest, lines in self.connections:
+        if dest == other_station:
+            return lines
+    return []
+
+Station.get_lines_to = get_lines_to
