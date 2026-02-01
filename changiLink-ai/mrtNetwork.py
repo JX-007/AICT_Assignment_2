@@ -3,6 +3,41 @@ import os
 from collections import defaultdict
 from Classes.station import Station, checkSymmetry
 
+
+def load_station_coordinates(csv_path=None):
+	"""Load station coordinates from mrt_lrt_data.csv.
+
+	Supports both schemas:
+	- station_name,type,lat,lng
+	- station_name,lat,lng
+
+	Returns a dict: {station_name: (longitude, latitude)}
+	"""
+	if csv_path is None:
+		csv_path = os.path.join(os.path.dirname(__file__), "Data", "mrt_lrt_data.csv")
+
+	if not os.path.exists(csv_path):
+		raise FileNotFoundError(f"CSV not found: {csv_path}")
+
+	coordinates = {}
+	with open(csv_path, "r", encoding="utf-8") as f:
+		reader = csv.DictReader(f)
+		for row in reader:
+			name = (row.get("station_name") or "").strip()
+			lat = (row.get("lat") or "").strip()
+			lng = (row.get("lng") or "").strip()
+			if not name:
+				continue
+			try:
+				latitude = float(lat) if lat else None
+				longitude = float(lng) if lng else None
+			except ValueError:
+				latitude = None
+				longitude = None
+			coordinates[name] = (longitude, latitude)
+
+	return coordinates
+
 def load_mrt_connections(csv_path=None):
 	"""Load MRT/LRT connections from mrt_connections.csv."""
 	if csv_path is None:
@@ -12,17 +47,35 @@ def load_mrt_connections(csv_path=None):
 		raise FileNotFoundError(f"CSV not found: {csv_path}")
 
 	connections_map = defaultdict(lambda: defaultdict(set))
+	
+	if csv_path is None:
+		if mode.lower() == "future":
+			# Load both current and future connections for Future mode
+			csv_paths = [
+				os.path.join(os.path.dirname(__file__), "Data", "mrt_connections.csv"),
+				os.path.join(os.path.dirname(__file__), "Data", "future_mrt_connections.csv")
+			]
+		else:
+			# Load only current connections for Today mode
+			csv_paths = [os.path.join(os.path.dirname(__file__), "Data", "mrt_connections.csv")]
+	else:
+		csv_paths = [csv_path]
 
-	with open(csv_path, "r", encoding="utf-8") as f:
-		reader = csv.DictReader(f)
-		for row in reader:
-			station = row.get("Station")
-			destination = row.get("Destination")
-			line = row.get("Line")
-			if not station or not destination or not line:
-				continue
+	# Load connections from all specified CSV files
+	for csv_file in csv_paths:
+		if not os.path.exists(csv_file):
+			raise FileNotFoundError(f"CSV not found: {csv_file}")
 
-			connections_map[station][destination].add(line)
+		with open(csv_file, "r", encoding="utf-8") as f:
+			reader = csv.DictReader(f)
+			for row in reader:
+				station = row.get("Station")
+				destination = row.get("Destination")
+				line = row.get("Line")
+				if not station or not destination or not line:
+					continue
+
+				connections_map[station][destination].add(line)
 
 	mrt_network_data = {}
 	for station, dest_map in connections_map.items():
@@ -68,3 +121,18 @@ def build_mrt_network():
 				source_station.add_connection(dest_station, lines)
 	
 	return mrt_network
+
+
+def load_future_mrt_connections(future_csv, base_network_data):
+    """
+    Merge future MRT stations into existing MRT network data.
+    """
+    future_data = load_mrt_connections(future_csv)
+
+    for station, connections in future_data.items():
+        if station not in base_network_data:
+            base_network_data[station] = connections
+        else:
+            base_network_data[station].extend(connections)
+
+    return base_network_data
