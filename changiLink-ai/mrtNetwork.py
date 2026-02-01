@@ -44,28 +44,38 @@ def load_mrt_connections(csv_path=None, mode="Today"):
 	Args:
 		csv_path: Optional path to CSV file. If None, uses default based on mode.
 		mode: String, either "Today" or "Future". Determines which network to load.
+			   "Future" mode loads both current and future connections combined.
 	"""
+	connections_map = defaultdict(lambda: defaultdict(set))
+	
 	if csv_path is None:
 		if mode.lower() == "future":
-			csv_path = os.path.join(os.path.dirname(__file__), "Data", "future_mrt_connections.csv")
+			# Load both current and future connections for Future mode
+			csv_paths = [
+				os.path.join(os.path.dirname(__file__), "Data", "mrt_connections.csv"),
+				os.path.join(os.path.dirname(__file__), "Data", "future_mrt_connections.csv")
+			]
 		else:
-			csv_path = os.path.join(os.path.dirname(__file__), "Data", "mrt_connections.csv")
+			# Load only current connections for Today mode
+			csv_paths = [os.path.join(os.path.dirname(__file__), "Data", "mrt_connections.csv")]
+	else:
+		csv_paths = [csv_path]
 
-	if not os.path.exists(csv_path):
-		raise FileNotFoundError(f"CSV not found: {csv_path}")
+	# Load connections from all specified CSV files
+	for csv_file in csv_paths:
+		if not os.path.exists(csv_file):
+			raise FileNotFoundError(f"CSV not found: {csv_file}")
 
-	connections_map = defaultdict(lambda: defaultdict(set))
+		with open(csv_file, "r", encoding="utf-8") as f:
+			reader = csv.DictReader(f)
+			for row in reader:
+				station = row.get("Station")
+				destination = row.get("Destination")
+				line = row.get("Line")
+				if not station or not destination or not line:
+					continue
 
-	with open(csv_path, "r", encoding="utf-8") as f:
-		reader = csv.DictReader(f)
-		for row in reader:
-			station = row.get("Station")
-			destination = row.get("Destination")
-			line = row.get("Line")
-			if not station or not destination or not line:
-				continue
-
-			connections_map[station][destination].add(line)
+				connections_map[station][destination].add(line)
 
 	mrt_network_data = {}
 	for station, dest_map in connections_map.items():
