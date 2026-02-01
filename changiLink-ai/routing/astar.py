@@ -1,6 +1,7 @@
 import os
 import sys
 import math
+import time
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(__file__))
 if PROJECT_ROOT not in sys.path:
@@ -82,10 +83,12 @@ def a_star_search(start_station, goal_station):
     cost_so_far[start_key] = 0
 
     goal_key = None
+    nodes_expanded = 0
 
     while not frontier.is_empty():
         current_station, current_line = frontier.get()
         current_key = (current_station, current_line)
+        nodes_expanded += 1
 
         if current_station == goal_station:
             goal_key = current_key
@@ -101,7 +104,7 @@ def a_star_search(start_station, goal_station):
                 frontier.put((next_station, next_line), priority)
                 came_from[next_key] = current_key
 
-    return came_from, cost_so_far, goal_key
+    return came_from, cost_so_far, goal_key, nodes_expanded
 
 
 def reconstruct_path(came_from, end_key):
@@ -118,24 +121,26 @@ def reconstruct_path(came_from, end_key):
 
 # Main
 if __name__ == "__main__":
-    # Get mode selection
     mode_input = input("(Today or Future)Mode: ").strip().lower()
     mode = "Future" if mode_input == "future" else "Today"
-    
-    # Build MRT network with selected mode
+
     mrt_network = build_mrt_network(mode=mode)   
     start_station = input("Enter start station: ")
     start_station = mrt_network[start_station]
     goal_station = input("Enter goal station: ")
     goal_station = mrt_network[goal_station]
-    came_from, cost_so_far, goal_key = a_star_search(start_station, goal_station)
+    start_time = time.perf_counter()
+    came_from, cost_so_far, goal_key, nodes_expanded = a_star_search(start_station, goal_station)
+    elapsed = time.perf_counter() - start_time
     path = reconstruct_path(came_from, goal_key)
     if path:
-        print("Path found:")
         print(" → ".join(path))
         print(f"Total time : {cost_so_far[goal_key]//3600}:{(cost_so_far[goal_key]%3600)//60:02d}:{cost_so_far[goal_key]%60:02d} (hh:mm:ss)")
+        print(f"Path length: {len(path)}")
     else:
         print("No path found.")
+    print(f"Nodes expanded: {nodes_expanded}")
+    print(f"Runtime: {elapsed:.6f}s")
 
     if _missing_coordinate_names:
         print("Missing coordinates for:")
