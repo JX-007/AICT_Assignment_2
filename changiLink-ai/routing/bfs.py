@@ -8,15 +8,14 @@ if PROJECT_ROOT not in sys.path:
 from Classes.transfer import load_transfer_timings
 from mrtNetwork import build_mrt_network
 
-def breadth_first_search(mrt_network, start_station_name, goal_station_name, transfer_timings_dict=None):
+def breadth_first_search(mrt_network, start_station_name, goal_station_name):
 	"""
-	Performs breadth-first search to find shortest path by travel time (in seconds).
+	Performs breadth-first search to find shortest path by number of stations.
 	
 	Args:
 		mrt_network (dict): Dictionary of Station objects representing the MRT network
 		start_station_name (str): Name of the starting station
 		goal_station_name (str): Name of the goal station
-		transfer_timings_dict (dict): Optional dictionary of transfer timings in seconds for computing penalties
 	
 	Returns:
 		list: Path from start to goal as list of station names
