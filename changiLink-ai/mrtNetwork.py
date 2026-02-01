@@ -95,7 +95,6 @@ def build_mrt_network(mode="Today"):
 	
 	# Create all Station objects and build connections in a single pass
 	mrt_network = {}
-	station_coordinates = load_station_coordinates()
 	
 	# First pass: Create all Station objects with their lines
 	for station_name in mrt_network_data.keys():
@@ -104,13 +103,7 @@ def build_mrt_network(mode="Today"):
 		for dest_name, line_list in mrt_network_data[station_name]:
 			lines_set.update(line_list)
 		
-		longitude, latitude = station_coordinates.get(station_name, (None, None))
-		mrt_network[station_name] = Station(
-			station_name,
-			list(lines_set),
-			longitude=longitude,
-			latitude=latitude,
-		)
+		mrt_network[station_name] = Station(station_name, list(lines_set))
 	
 	# Second pass: Add connections between Station objects
 	for source_name, connections_list in mrt_network_data.items():
@@ -121,3 +114,17 @@ def build_mrt_network(mode="Today"):
 				source_station.add_connection(dest_station, lines)
 	
 	return mrt_network
+
+def load_future_mrt_connections(future_csv, base_network_data):
+    """
+    Merge future MRT stations into existing MRT network data.
+    """
+    future_data = load_mrt_connections(future_csv)
+
+    for station, connections in future_data.items():
+        if station not in base_network_data:
+            base_network_data[station] = connections
+        else:
+            base_network_data[station].extend(connections)
+
+    return base_network_data
