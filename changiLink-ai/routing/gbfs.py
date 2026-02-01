@@ -1,6 +1,7 @@
 import os
 import sys
 import math
+import time
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(__file__))
 if PROJECT_ROOT not in sys.path:
@@ -116,6 +117,7 @@ def gbfs_search(start_station, goal_station):
     came_from[start_key] = None
 
     goal_key = None
+    nodes_expanded = 0
 
     # STEP 3c: Main search loop
     while not frontier.is_empty():
@@ -127,6 +129,7 @@ def gbfs_search(start_station, goal_station):
             continue
         
         visited.add(current_key)
+        nodes_expanded += 1
 
         # Check if goal reached
         if current_station == goal_station:
@@ -149,7 +152,7 @@ def gbfs_search(start_station, goal_station):
                     came_from[next_key] = current_key
 
     # STEP 3d: Return came_from for path reconstruction
-    return came_from, goal_key
+    return came_from, goal_key, nodes_expanded
 
 
 # STEP 4: Path Reconstruction with Time Calculation
@@ -184,32 +187,29 @@ def reconstruct_path(came_from, end_key):
 
 # STEP 5: Main Execution
 if __name__ == "__main__":
-    print("=== GREEDY BEST-FIRST SEARCH (GBFS) ===\n")
-    
-    # STEP 5a: Get mode selection
     mode_input = input("(Today or Future)Mode: ").strip().lower()
     mode = "Future" if mode_input == "future" else "Today"
-    
-    # STEP 5b: Build MRT network
+
     mrt_network = build_mrt_network(mode=mode)
-    
-    # STEP 5c: Get user input
+
     start_station_name = input("Enter start station: ").strip()
     start_station = mrt_network[start_station_name]
     goal_station_name = input("Enter goal station: ").strip()
     goal_station = mrt_network[goal_station_name]
-    
-    # STEP 5d: Run GBFS
-    came_from, goal_key = gbfs_search(start_station, goal_station)
-    
-    # STEP 5e: Reconstruct and display path
+
+    start_time = time.perf_counter()
+    came_from, goal_key, nodes_expanded = gbfs_search(start_station, goal_station)
+    elapsed = time.perf_counter() - start_time
+
     path, total_time = reconstruct_path(came_from, goal_key)
     if path:
-        print("Path found:")
         print(" → ".join(path))
         print(f"Total time: {int(total_time)//3600}:{(int(total_time)%3600)//60:02d}:{int(total_time)%60:02d} (hh:mm:ss)")
+        print(f"Path length: {len(path)}")
     else:
         print("No path found.")
+    print(f"Nodes expanded: {nodes_expanded}")
+    print(f"Runtime: {elapsed:.6f}s")
 
     # STEP 5f: Display missing coordinates (if any)
     if _missing_coordinate_names:

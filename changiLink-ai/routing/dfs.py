@@ -1,5 +1,6 @@
 import os
 import sys
+import time
 
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(__file__))
@@ -67,6 +68,7 @@ def dfs_search(start_station, goal_station):
     stack = push_start_node(stack, start_station, came_from)
     
     goal_key = None
+    nodes_expanded = 0
 
     # STEP 3c: Main exploration loop
     while stack:
@@ -78,6 +80,7 @@ def dfs_search(start_station, goal_station):
             continue
         
         visited.add(current_key)
+        nodes_expanded += 1
 
         # Check if goal reached
         if current_station == goal_station:
@@ -101,7 +104,7 @@ def dfs_search(start_station, goal_station):
                     came_from[next_key] = current_key
 
     # STEP 3d: Return came_from for path reconstruction
-    return came_from, goal_key
+    return came_from, goal_key, nodes_expanded
 
 
 # STEP 4: Backtracking (implicit in came_from tracking)
@@ -142,35 +145,30 @@ def reconstruct_path(came_from, end_key):
 
 # STEP 6: Main Execution and Display Results
 if __name__ == "__main__":
-    print("=== DEPTH-FIRST SEARCH (DFS) ===\n")
-    
-    # STEP 6a: Get mode selection
+    print("=== DEPTH-FIRST SEARCH (DFS) ===")
     mode_input = input("(Today or Future)Mode: ").strip().lower()
     mode = "Future" if mode_input == "future" else "Today"
-    
-    # STEP 6b: Build MRT network
-    print(f"Building MRT network ({mode})...")
+
     mrt_network = build_mrt_network(mode=mode)
-    print(f"Network built with {len(mrt_network)} stations\n")
-    
-    # STEP 6c: Get user input
+
     start_station_name = input("Enter start station: ").strip()
     start_station = mrt_network[start_station_name]
     goal_station_name = input("Enter goal station: ").strip()
     goal_station = mrt_network[goal_station_name]
-    
-    # STEP 6d: Run DFS
-    print("\nSearching (DFS - explores deeply, may not be optimal)...\n")
-    came_from, goal_key = dfs_search(start_station, goal_station)
-    
-    # STEP 6e: Reconstruct and display path
+
+    start_time = time.perf_counter()
+    came_from, goal_key, nodes_expanded = dfs_search(start_station, goal_station)
+    elapsed = time.perf_counter() - start_time
+
     path, total_time = reconstruct_path(came_from, goal_key)
     if path:
-        print("Path found:")
         print(" → ".join(path))
         print(f"Total time: {int(total_time)//3600}:{(int(total_time)%3600)//60:02d}:{int(total_time)%60:02d} (hh:mm:ss)")
+        print(f"Path length: {len(path)}")
     else:
         print("No path found.")
+    print(f"Nodes expanded: {nodes_expanded}")
+    print(f"Runtime: {elapsed:.6f}s")
 
 # Note: DFS explores deeply along one branch before backtracking.
 # It's less efficient for pathfinding than A* or GBFS but is memory-friendly.
