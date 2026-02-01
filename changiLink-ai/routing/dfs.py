@@ -144,22 +144,26 @@ def reconstruct_path(came_from, end_key):
 if __name__ == "__main__":
     print("=== DEPTH-FIRST SEARCH (DFS) ===\n")
     
-    # STEP 6a: Build MRT network
-    print("Building MRT network...")
-    mrt_network = build_mrt_network()
+    # STEP 6a: Get mode selection
+    mode_input = input("(Today or Future)Mode: ").strip().lower()
+    mode = "Future" if mode_input == "future" else "Today"
+    
+    # STEP 6b: Build MRT network
+    print(f"Building MRT network ({mode})...")
+    mrt_network = build_mrt_network(mode=mode)
     print(f"Network built with {len(mrt_network)} stations\n")
     
-    # STEP 6b: Get user input
+    # STEP 6c: Get user input
     start_station_name = input("Enter start station: ").strip()
     start_station = mrt_network[start_station_name]
     goal_station_name = input("Enter goal station: ").strip()
     goal_station = mrt_network[goal_station_name]
     
-    # STEP 6c: Run DFS
+    # STEP 6d: Run DFS
     print("\nSearching (DFS - explores deeply, may not be optimal)...\n")
     came_from, goal_key = dfs_search(start_station, goal_station)
     
-    # STEP 6d: Reconstruct and display path
+    # STEP 6e: Reconstruct and display path
     path, total_time = reconstruct_path(came_from, goal_key)
     if path:
         print("Path found:")

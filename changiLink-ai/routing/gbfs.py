@@ -186,19 +186,23 @@ def reconstruct_path(came_from, end_key):
 if __name__ == "__main__":
     print("=== GREEDY BEST-FIRST SEARCH (GBFS) ===\n")
     
-    # STEP 5a: Build MRT networ
-    mrt_network = build_mrt_network()
+    # STEP 5a: Get mode selection
+    mode_input = input("(Today or Future)Mode: ").strip().lower()
+    mode = "Future" if mode_input == "future" else "Today"
     
-    # STEP 5b: Get user input
+    # STEP 5b: Build MRT network
+    mrt_network = build_mrt_network(mode=mode)
+    
+    # STEP 5c: Get user input
     start_station_name = input("Enter start station: ").strip()
     start_station = mrt_network[start_station_name]
     goal_station_name = input("Enter goal station: ").strip()
     goal_station = mrt_network[goal_station_name]
     
-    # STEP 5c: Run GBFS
+    # STEP 5d: Run GBFS
     came_from, goal_key = gbfs_search(start_station, goal_station)
     
-    # STEP 5d: Reconstruct and display path
+    # STEP 5e: Reconstruct and display path
     path, total_time = reconstruct_path(came_from, goal_key)
     if path:
         print("Path found:")
@@ -207,7 +211,7 @@ if __name__ == "__main__":
     else:
         print("No path found.")
 
-    # STEP 5e: Display missing coordinates (if any)
+    # STEP 5f: Display missing coordinates (if any)
     if _missing_coordinate_names:
         print("\nMissing coordinates for:")
         for name in sorted(_missing_coordinate_names):

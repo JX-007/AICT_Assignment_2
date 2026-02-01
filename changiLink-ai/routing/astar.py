@@ -118,7 +118,12 @@ def reconstruct_path(came_from, end_key):
 
 # Main
 if __name__ == "__main__":
-    mrt_network = build_mrt_network()   
+    # Get mode selection
+    mode_input = input("(Today or Future)Mode: ").strip().lower()
+    mode = "Future" if mode_input == "future" else "Today"
+    
+    # Build MRT network with selected mode
+    mrt_network = build_mrt_network(mode=mode)   
     start_station = input("Enter start station: ")
     start_station = mrt_network[start_station]
     goal_station = input("Enter goal station: ")

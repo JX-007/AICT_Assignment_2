@@ -58,7 +58,12 @@ def breadth_first_search(mrt_network, start_station_name, goal_station_name):
 
 
 if __name__ == "__main__":
-	mrt_network = build_mrt_network()
+	# Get mode selection
+	mode_input = input("(Today or Future)Mode: ").strip().lower()
+	mode = "Future" if mode_input == "future" else "Today"
+	
+	# Build MRT network with selected mode
+	mrt_network = build_mrt_network(mode=mode)
 	transfer_csv = os.path.join(PROJECT_ROOT, "Data", "MRT transfer timing.csv")
 	load_transfer_timings(transfer_csv)
 	# Example: Find path from Clementi to Changi Airport
