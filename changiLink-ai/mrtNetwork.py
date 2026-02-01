@@ -3,6 +3,41 @@ import os
 from collections import defaultdict
 from Classes.station import Station, checkSymmetry
 
+
+def load_station_coordinates(csv_path=None):
+	"""Load station coordinates from mrt_lrt_data.csv.
+
+	Supports both schemas:
+	- station_name,type,lat,lng
+	- station_name,lat,lng
+
+	Returns a dict: {station_name: (longitude, latitude)}
+	"""
+	if csv_path is None:
+		csv_path = os.path.join(os.path.dirname(__file__), "Data", "mrt_lrt_data.csv")
+
+	if not os.path.exists(csv_path):
+		raise FileNotFoundError(f"CSV not found: {csv_path}")
+
+	coordinates = {}
+	with open(csv_path, "r", encoding="utf-8") as f:
+		reader = csv.DictReader(f)
+		for row in reader:
+			name = (row.get("station_name") or "").strip()
+			lat = (row.get("lat") or "").strip()
+			lng = (row.get("lng") or "").strip()
+			if not name:
+				continue
+			try:
+				latitude = float(lat) if lat else None
+				longitude = float(lng) if lng else None
+			except ValueError:
+				latitude = None
+				longitude = None
+			coordinates[name] = (longitude, latitude)
+
+	return coordinates
+
 def load_mrt_connections(csv_path=None):
 	"""Load MRT/LRT connections from mrt_connections.csv."""
 	if csv_path is None:
@@ -49,6 +84,7 @@ def build_mrt_network():
 	
 	# Create all Station objects and build connections in a single pass
 	mrt_network = {}
+	station_coordinates = load_station_coordinates()
 	
 	# First pass: Create all Station objects with their lines
 	for station_name in mrt_network_data.keys():
@@ -57,7 +93,13 @@ def build_mrt_network():
 		for dest_name, line_list in mrt_network_data[station_name]:
 			lines_set.update(line_list)
 		
-		mrt_network[station_name] = Station(station_name, list(lines_set))
+		longitude, latitude = station_coordinates.get(station_name, (None, None))
+		mrt_network[station_name] = Station(
+			station_name,
+			list(lines_set),
+			longitude=longitude,
+			latitude=latitude,
+		)
 	
 	# Second pass: Add connections between Station objects
 	for source_name, connections_list in mrt_network_data.items():
