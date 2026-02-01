@@ -34,11 +34,11 @@ CURRENT_PAIRS = [
 ]
 
 FUTURE_PAIRS = [
-    ("Paya Lebar", "T5 Interchange"),
-    ("HarbourFront", "T5 Interchange"),
-    ("Bishan", "T5 Interchange"),
-    ("Tampines", "T5 Interchange"),
-    ("Bukit Gombak", "T5 Interchange")
+    ("T5 Interchange", "Paya Lebar"),
+    ("T5 Interchange", "HarbourFront"),
+    ("T5 Interchange", "Bishan"),
+    ("T5 Interchange", "Tampines"),
+    ("T5 Interchange", "Bukit Gombak")
 ]
 
 ALGORITHMS = [
@@ -159,6 +159,7 @@ def results_to_dataframe(results):
             })
     df = pd.DataFrame(rows)
     return df
+
 import matplotlib.pyplot as plt
 
 def plot_runtime_comparison(df):
