@@ -44,7 +44,7 @@ def breadth_first_search(mrt_network, start_station_name, goal_station_name, tra
 		current_station, path = queue.popleft()
 		
 		# Get all neighboring stations
-		for neighbor_station, in current_station.get_connections():
+		for neighbor_station, _lines in current_station.get_connections():
 			if neighbor_station not in visited:
 				if neighbor_station == goal_station:
 					return path + [neighbor_station.name]
