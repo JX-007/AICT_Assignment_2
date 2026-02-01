@@ -38,10 +38,18 @@ def load_station_coordinates(csv_path=None):
 
 	return coordinates
 
-def load_mrt_connections(csv_path=None):
-	"""Load MRT/LRT connections from mrt_connections.csv."""
+def load_mrt_connections(csv_path=None, mode="Today"):
+	"""Load MRT/LRT connections from mrt_connections.csv or future_mrt_connections.csv.
+	
+	Args:
+		csv_path: Optional path to CSV file. If None, uses default based on mode.
+		mode: String, either "Today" or "Future". Determines which network to load.
+	"""
 	if csv_path is None:
-		csv_path = os.path.join(os.path.dirname(__file__), "Data", "mrt_connections.csv")
+		if mode.lower() == "future":
+			csv_path = os.path.join(os.path.dirname(__file__), "Data", "future_mrt_connections.csv")
+		else:
+			csv_path = os.path.join(os.path.dirname(__file__), "Data", "mrt_connections.csv")
 
 	if not os.path.exists(csv_path):
 		raise FileNotFoundError(f"CSV not found: {csv_path}")
@@ -70,17 +78,20 @@ def load_mrt_connections(csv_path=None):
 
 CurrentStations = load_mrt_connections()
 
-def build_mrt_network():
+def build_mrt_network(mode="Today"):
 	"""
 	Builds the MRT network graph with Station objects.
 	Returns a dictionary where keys are station names and values are Station objects
 	with connections to other stations.
 	
+	Args:
+		mode: String, either "Today" or "Future". Determines which network to load.
+	
 	All travel times are in seconds. Baseline station-to-station travel time with penalties as applicable.
 	"""
 	
 	# Consolidated MRT Network Data with stations and their connections
-	mrt_network_data = CurrentStations
+	mrt_network_data = load_mrt_connections(mode=mode)
 	
 	# Create all Station objects and build connections in a single pass
 	mrt_network = {}
