@@ -127,13 +127,13 @@ def load_transfer_timings(csv_file_path):
 					skipped_count += 1
 					continue
 		
-		# Summary statistics
-		print(f"✓ Transfer Timing Loader - Summary:")
-		print(f"  • Loaded {len(transfers_list)} transfer records")
-		print(f"  • Processed {row_count} rows (skipped {skipped_count})")
-		if transfers_list:
-			times = sorted([t.transfer_time_seconds for t in transfers_list])
-			print(f"  • Time range: {times[0]}s to {times[-1]}s (avg: {sum(times)//len(times)}s)")
+		# Summary statistics (hidden)
+		# print(f"✓ Transfer Timing Loader - Summary:")
+		# print(f"  • Loaded {len(transfers_list)} transfer records")
+		# print(f"  • Processed {row_count} rows (skipped {skipped_count})")
+		# if transfers_list:
+		# 	times = sorted([t.transfer_time_seconds for t in transfers_list])
+		# 	print(f"  • Time range: {times[0]}s to {times[-1]}s (avg: {sum(times)//len(times)}s)")
 		
 		return transfers_dict, transfers_list
 	

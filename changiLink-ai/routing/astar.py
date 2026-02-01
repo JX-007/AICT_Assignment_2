@@ -128,7 +128,7 @@ if __name__ == "__main__":
     if path:
         print("Path found:")
         print(" → ".join(path))
-        print(f"Total cost (seconds): {cost_so_far[goal_key]}")
+        print(f"Total time : {cost_so_far[goal_key]//3600}:{(cost_so_far[goal_key]%3600)//60:02d}:{cost_so_far[goal_key]%60:02d} (hh:mm:ss)")
     else:
         print("No path found.")
 
