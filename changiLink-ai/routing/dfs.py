@@ -145,6 +145,7 @@ def reconstruct_path(came_from, end_key):
 
 # STEP 6: Main Execution and Display Results
 if __name__ == "__main__":
+    print("=== DEPTH-FIRST SEARCH (DFS) ===")
     mode_input = input("(Today or Future)Mode: ").strip().lower()
     mode = "Future" if mode_input == "future" else "Today"
 
