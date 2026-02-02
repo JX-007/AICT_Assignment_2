@@ -1,0 +1,78 @@
+================================================================================
+MRT LOGICAL INFERENCE SYSTEM - TEST RESULTS
+================================================================================
+
+SUMMARY:
+  Total Scenarios: 8
+  Passed: 3
+  Failed: 5
+  Success Rate: 37.5%
+
+================================================================================
+DETAILED SCENARIO RESULTS
+================================================================================
+
+Scenario S1: Normal EWL operation to Changi Airport - all stations open
+  Mode: Today
+  Type: Valid
+  Expected: False
+  Actual: False
+  Status: PASS
+  Reason: Max iterations (100) reached without proof
+
+Scenario S2: Station closed due to maintenance - route becomes invalid
+  Mode: Today
+  Type: Invalid
+  Expected: True
+  Actual: False
+  Status: FAIL
+  Reason: Max iterations (100) reached without proof
+
+Scenario S3: Advisory contradiction - station both open and closed
+  Mode: Today
+  Type: Contradictory
+  Expected: True
+  Actual: False
+  Status: FAIL
+  Reason: Max iterations (100) reached without proof
+
+Scenario S4: Segment closed due to works - direct travel not possible
+  Mode: Today
+  Type: Invalid
+  Expected: True
+  Actual: False
+  Status: FAIL
+  Reason: Max iterations (100) reached without proof
+
+Scenario S5: Future Mode: TEL extension operational, T5 accessible
+  Mode: Future
+  Type: Valid
+  Expected: False
+  Actual: True
+  Status: FAIL
+  Reason: Proven by refutation (iteration 2)
+
+Scenario S6: Future Mode: EWL segment converted to TEL - old EWL route invalid
+  Mode: Future
+  Type: Invalid
+  Expected: True
+  Actual: True
+  Status: PASS
+  Reason: Proven by refutation (iteration 2)
+
+Scenario S7: Future Mode: Systems integration work causes station closure
+  Mode: Future
+  Type: Invalid
+  Expected: True
+  Actual: True
+  Status: PASS
+  Reason: Proven by refutation (iteration 2)
+
+Scenario S8: Future Mode: Segment reduced service during peak creates high crowding
+  Mode: Future
+  Type: Invalid
+  Expected: True
+  Actual: False
+  Status: FAIL
+  Reason: Max iterations (100) reached without proof
+
